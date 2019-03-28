@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "ref": {
+                    "type": "string"
+                },
+                "sha": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

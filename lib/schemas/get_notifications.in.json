@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "all": {
+            "type": "boolean"
+        },
+        "participating": {
+            "type": "boolean"
+        },
+        "since": {
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

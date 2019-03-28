@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "keyword": {
+            "required": true,
+            "type": "string"
+        },
+        "order": {
+            "type": "string",
+            "enum": [
+                "desc",
+                "asc"
+            ],
+            "default": "desc"
+        },
+        "start_page": {
+            "type": "string"
+        },
+        "sort": {
+            "type": "string",
+            "enum": [
+                "updated",
+                "stars",
+                "forks"
+            ]
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

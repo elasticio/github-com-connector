@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "properties": {
+        "teamId": {
+            "required": true,
+            "type": "integer"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

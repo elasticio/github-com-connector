@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "direction": {
+            "type": "string"
+        },
+        "sort": {
+            "type": "string",
+            "enum": [
+                "created",
+                "updated"
+            ],
+            "default": "created"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

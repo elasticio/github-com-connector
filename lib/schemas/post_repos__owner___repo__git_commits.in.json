@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "author": {
+                    "properties": {
+                        "date": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "parents": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "tree": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "message",
+                "parents",
+                "tree"
+            ],
+            "type": "object"
+        }
+    }
+}

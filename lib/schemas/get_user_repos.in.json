@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": [
+                "all",
+                "public",
+                "private",
+                "forks",
+                "sources",
+                "member"
+            ],
+            "default": "all"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

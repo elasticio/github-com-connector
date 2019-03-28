@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "properties": {
+        "language": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

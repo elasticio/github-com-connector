@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer"
+        },
+        "commentId": {
+            "required": true,
+            "type": "integer"
+        },
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "body": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

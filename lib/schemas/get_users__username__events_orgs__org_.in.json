@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {
+            "required": true,
+            "type": "string"
+        },
+        "org": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

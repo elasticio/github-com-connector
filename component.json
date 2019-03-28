@@ -1,0 +1,4199 @@
+{
+    "title": "GitHub",
+    "description": "Powerful collaboration, code review, and code management for open source and private projects.\n",
+    "docsUrl": "https://developer.github.com/v3/",
+    "url": "https://api.apis.guru/v2/specs/github.com/v3/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.github.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "oauth_2_0": {
+                "label": "OAuth2 is a protocol that lets external apps request authorization to private\ndetails in a user's GitHub account without getting their password. This is\npreferred over Basic Authentication because tokens can be limited to specific\ntypes of data, and can be revoked by users at any time.\n",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://github.com/login/oauth/authorize",
+            "token_uri": "https://github.com/login/oauth/access_token"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_emojis": {
+            "main": "./lib/actions/get_emojis.js",
+            "title": "Lists all the emojis available to use on GitHub.",
+            "description": "Lists all the emojis available to use on GitHub.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_emojis.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_events": {
+            "main": "./lib/actions/get_events.js",
+            "title": "List public events.",
+            "description": "List public events.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_events.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_feeds": {
+            "main": "./lib/actions/get_feeds.js",
+            "title": "List Feeds.\nGitHub provides several timeline resources in Atom format. The Feeds API\n lists all the feeds available to the authenticating user.\n",
+            "description": "List Feeds.\nGitHub provides several timeline resources in Atom format. The Feeds API\n lists all the feeds available to the authenticating user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_feeds.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_gists": {
+            "main": "./lib/actions/get_gists.js",
+            "title": "List the authenticated user's gists or if called anonymously, this will\nreturn all public gists.\n",
+            "description": "List the authenticated user's gists or if called anonymously, this will\nreturn all public gists.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_gists.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_gists": {
+            "main": "./lib/actions/post_gists.js",
+            "title": "Create a gist.",
+            "description": "Create a gist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_gists.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_gists_public": {
+            "main": "./lib/actions/get_gists_public.js",
+            "title": "List all public gists.",
+            "description": "List all public gists.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_gists_public.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_gists_starred": {
+            "main": "./lib/actions/get_gists_starred.js",
+            "title": "List the authenticated user's starred gists.",
+            "description": "List the authenticated user's starred gists.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_gists_starred.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_gists__id_": {
+            "main": "./lib/actions/delete_gists__id_.js",
+            "title": "Delete a gist.",
+            "description": "Delete a gist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_gists__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_gists__id_": {
+            "main": "./lib/actions/get_gists__id_.js",
+            "title": "Get a single gist.",
+            "description": "Get a single gist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_gists__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_gists__id_": {
+            "main": "./lib/actions/patch_gists__id_.js",
+            "title": "Edit a gist.",
+            "description": "Edit a gist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_gists__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_gists__id__comments": {
+            "main": "./lib/actions/get_gists__id__comments.js",
+            "title": "List comments on a gist.",
+            "description": "List comments on a gist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_gists__id__comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_gists__id__comments": {
+            "main": "./lib/actions/post_gists__id__comments.js",
+            "title": "Create a commen",
+            "description": "Create a commen",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_gists__id__comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_gists__id__comments__commentId_": {
+            "main": "./lib/actions/delete_gists__id__comments__commentId_.js",
+            "title": "Delete a comment.",
+            "description": "Delete a comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_gists__id__comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_gists__id__comments__commentId_": {
+            "main": "./lib/actions/get_gists__id__comments__commentId_.js",
+            "title": "Get a single comment.",
+            "description": "Get a single comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_gists__id__comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_gists__id__comments__commentId_": {
+            "main": "./lib/actions/patch_gists__id__comments__commentId_.js",
+            "title": "Edit a comment.",
+            "description": "Edit a comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_gists__id__comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_gists__id__forks": {
+            "main": "./lib/actions/post_gists__id__forks.js",
+            "title": "Fork a gist.",
+            "description": "Fork a gist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_gists__id__forks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_gists__id__star": {
+            "main": "./lib/actions/delete_gists__id__star.js",
+            "title": "Unstar a gist.",
+            "description": "Unstar a gist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_gists__id__star.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_gists__id__star": {
+            "main": "./lib/actions/get_gists__id__star.js",
+            "title": "Check if a gist is starred.",
+            "description": "Check if a gist is starred.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_gists__id__star.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_gists__id__star": {
+            "main": "./lib/actions/put_gists__id__star.js",
+            "title": "Star a gist.",
+            "description": "Star a gist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_gists__id__star.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_gitignore_templates": {
+            "main": "./lib/actions/get_gitignore_templates.js",
+            "title": "Listing available templates.\nList all templates available to pass as an option when creating a repository.\n",
+            "description": "Listing available templates.\nList all templates available to pass as an option when creating a repository.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_gitignore_templates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_gitignore_templates__language_": {
+            "main": "./lib/actions/get_gitignore_templates__language_.js",
+            "title": "Get a single template.",
+            "description": "Get a single template.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_gitignore_templates__language_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_issues": {
+            "main": "./lib/actions/get_issues.js",
+            "title": "List issues.\nList all issues across all the authenticated user's visible repositories.\n",
+            "description": "List issues.\nList all issues across all the authenticated user's visible repositories.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_issues.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_legacy_issues_search__owner___repository___state___keyword_": {
+            "main": "./lib/actions/get_legacy_issues_search__owner___repository___state___keyword_.js",
+            "title": "Find issues by state and keyword.",
+            "description": "Find issues by state and keyword.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_legacy_issues_search__owner___repository___state___keyword_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_legacy_repos_search__keyword_": {
+            "main": "./lib/actions/get_legacy_repos_search__keyword_.js",
+            "title": "Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter.",
+            "description": "Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_legacy_repos_search__keyword_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_legacy_user_email__email_": {
+            "main": "./lib/actions/get_legacy_user_email__email_.js",
+            "title": "This API call is added for compatibility reasons only.",
+            "description": "This API call is added for compatibility reasons only.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_legacy_user_email__email_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_legacy_user_search__keyword_": {
+            "main": "./lib/actions/get_legacy_user_search__keyword_.js",
+            "title": "Find users by keyword.",
+            "description": "Find users by keyword.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_legacy_user_search__keyword_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_markdown": {
+            "main": "./lib/actions/post_markdown.js",
+            "title": "Render an arbitrary Markdown document",
+            "description": "Render an arbitrary Markdown document",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_markdown.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_markdown_raw": {
+            "main": "./lib/actions/post_markdown_raw.js",
+            "title": "Render a Markdown document in raw mode",
+            "description": "Render a Markdown document in raw mode",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_markdown_raw.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_meta": {
+            "main": "./lib/actions/get_meta.js",
+            "title": "This gives some information about GitHub.com, the service.",
+            "description": "This gives some information about GitHub.com, the service.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_meta.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_networks__owner___repo__events": {
+            "main": "./lib/actions/get_networks__owner___repo__events.js",
+            "title": "List public events for a network of repositories.",
+            "description": "List public events for a network of repositories.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_networks__owner___repo__events.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_notifications": {
+            "main": "./lib/actions/get_notifications.js",
+            "title": "List your notifications.\nList all notifications for the current user, grouped by repository.\n",
+            "description": "List your notifications.\nList all notifications for the current user, grouped by repository.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_notifications.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_notifications": {
+            "main": "./lib/actions/put_notifications.js",
+            "title": "Mark as read.\nMarking a notification as \"read\" removes it from the default view on GitHub.com.\n",
+            "description": "Mark as read.\nMarking a notification as \"read\" removes it from the default view on GitHub.com.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_notifications.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_notifications_threads__id_": {
+            "main": "./lib/actions/get_notifications_threads__id_.js",
+            "title": "View a single thread.",
+            "description": "View a single thread.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_notifications_threads__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_notifications_threads__id_": {
+            "main": "./lib/actions/patch_notifications_threads__id_.js",
+            "title": "Mark a thread as read",
+            "description": "Mark a thread as read",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_notifications_threads__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_notifications_threads__id__subscription": {
+            "main": "./lib/actions/delete_notifications_threads__id__subscription.js",
+            "title": "Delete a Thread Subscription.",
+            "description": "Delete a Thread Subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_notifications_threads__id__subscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_notifications_threads__id__subscription": {
+            "main": "./lib/actions/get_notifications_threads__id__subscription.js",
+            "title": "Get a Thread Subscription.",
+            "description": "Get a Thread Subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_notifications_threads__id__subscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_notifications_threads__id__subscription": {
+            "main": "./lib/actions/put_notifications_threads__id__subscription.js",
+            "title": "Set a Thread Subscription.\nThis lets you subscribe to a thread, or ignore it. Subscribing to a thread\nis unnecessary if the user is already subscribed to the repository. Ignoring\na thread will mute all future notifications (until you comment or get @mentioned).\n",
+            "description": "Set a Thread Subscription.\nThis lets you subscribe to a thread, or ignore it. Subscribing to a thread\nis unnecessary if the user is already subscribed to the repository. Ignoring\na thread will mute all future notifications (until you comment or get @mentioned).\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_notifications_threads__id__subscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgs__org_": {
+            "main": "./lib/actions/get_orgs__org_.js",
+            "title": "Get an Organization.",
+            "description": "Get an Organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgs__org_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_orgs__org_": {
+            "main": "./lib/actions/patch_orgs__org_.js",
+            "title": "Edit an Organization.",
+            "description": "Edit an Organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_orgs__org_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgs__org__events": {
+            "main": "./lib/actions/get_orgs__org__events.js",
+            "title": "List public events for an organization.",
+            "description": "List public events for an organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgs__org__events.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgs__org__issues": {
+            "main": "./lib/actions/get_orgs__org__issues.js",
+            "title": "List issues.\nList all issues for a given organization for the authenticated user.\n",
+            "description": "List issues.\nList all issues for a given organization for the authenticated user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgs__org__issues.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgs__org__members": {
+            "main": "./lib/actions/get_orgs__org__members.js",
+            "title": "Members list.\nList all users who are members of an organization. A member is a user tha\nbelongs to at least 1 team in the organization. If the authenticated user\nis also an owner of this organization then both concealed and public members\nwill be returned. If the requester is not an owner of the organization the\nquery will be redirected to the public members list.\n",
+            "description": "Members list.\nList all users who are members of an organization. A member is a user tha\nbelongs to at least 1 team in the organization. If the authenticated user\nis also an owner of this organization then both concealed and public members\nwill be returned. If the requester is not an owner of the organization the\nquery will be redirected to the public members list.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgs__org__members.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_orgs__org__members__username_": {
+            "main": "./lib/actions/delete_orgs__org__members__username_.js",
+            "title": "Remove a member.\nRemoving a user from this list will remove them from all teams and they\nwill no longer have any access to the organization's repositories.\n",
+            "description": "Remove a member.\nRemoving a user from this list will remove them from all teams and they\nwill no longer have any access to the organization's repositories.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_orgs__org__members__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgs__org__members__username_": {
+            "main": "./lib/actions/get_orgs__org__members__username_.js",
+            "title": "Check if a user is, publicly or privately, a member of the organization.",
+            "description": "Check if a user is, publicly or privately, a member of the organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgs__org__members__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgs__org__public_members": {
+            "main": "./lib/actions/get_orgs__org__public_members.js",
+            "title": "Public members list.\nMembers of an organization can choose to have their membership publicized\nor not.\n",
+            "description": "Public members list.\nMembers of an organization can choose to have their membership publicized\nor not.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgs__org__public_members.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_orgs__org__public_members__username_": {
+            "main": "./lib/actions/delete_orgs__org__public_members__username_.js",
+            "title": "Conceal a user's membership.",
+            "description": "Conceal a user's membership.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_orgs__org__public_members__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgs__org__public_members__username_": {
+            "main": "./lib/actions/get_orgs__org__public_members__username_.js",
+            "title": "Check public membership.",
+            "description": "Check public membership.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgs__org__public_members__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_orgs__org__public_members__username_": {
+            "main": "./lib/actions/put_orgs__org__public_members__username_.js",
+            "title": "Publicize a user's membership.",
+            "description": "Publicize a user's membership.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_orgs__org__public_members__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgs__org__repos": {
+            "main": "./lib/actions/get_orgs__org__repos.js",
+            "title": "List repositories for the specified org.",
+            "description": "List repositories for the specified org.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgs__org__repos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orgs__org__repos": {
+            "main": "./lib/actions/post_orgs__org__repos.js",
+            "title": "Create a new repository for the authenticated user. OAuth users must supply\nrepo scope.\n",
+            "description": "Create a new repository for the authenticated user. OAuth users must supply\nrepo scope.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orgs__org__repos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgs__org__teams": {
+            "main": "./lib/actions/get_orgs__org__teams.js",
+            "title": "List teams.",
+            "description": "List teams.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgs__org__teams.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orgs__org__teams": {
+            "main": "./lib/actions/post_orgs__org__teams.js",
+            "title": "Create team.\nIn order to create a team, the authenticated user must be an owner of organization.\n",
+            "description": "Create team.\nIn order to create a team, the authenticated user must be an owner of organization.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orgs__org__teams.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_rate_limit": {
+            "main": "./lib/actions/get_rate_limit.js",
+            "title": "Get your current rate limit status\nNote: Accessing this endpoint does not count against your rate limit.\n",
+            "description": "Get your current rate limit status\nNote: Accessing this endpoint does not count against your rate limit.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_rate_limit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo_": {
+            "main": "./lib/actions/delete_repos__owner___repo_.js",
+            "title": "Delete a Repository.\nDeleting a repository requires admin access. If OAuth is used, the delete_repo\nscope is required.\n",
+            "description": "Delete a Repository.\nDeleting a repository requires admin access. If OAuth is used, the delete_repo\nscope is required.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo_": {
+            "main": "./lib/actions/get_repos__owner___repo_.js",
+            "title": "Get repository.",
+            "description": "Get repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo_": {
+            "main": "./lib/actions/patch_repos__owner___repo_.js",
+            "title": "Edit repository.",
+            "description": "Edit repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__assignees": {
+            "main": "./lib/actions/get_repos__owner___repo__assignees.js",
+            "title": "List assignees.\nThis call lists all the available assignees (owner + collaborators) to which\nissues may be assigned.\n",
+            "description": "List assignees.\nThis call lists all the available assignees (owner + collaborators) to which\nissues may be assigned.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__assignees.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__assignees__assignee_": {
+            "main": "./lib/actions/get_repos__owner___repo__assignees__assignee_.js",
+            "title": "Check assignee.\nYou may also check to see if a particular user is an assignee for a repository.\n",
+            "description": "Check assignee.\nYou may also check to see if a particular user is an assignee for a repository.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__assignees__assignee_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__branches": {
+            "main": "./lib/actions/get_repos__owner___repo__branches.js",
+            "title": "Get list of branches",
+            "description": "Get list of branches",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__branches.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__branches__branch_": {
+            "main": "./lib/actions/get_repos__owner___repo__branches__branch_.js",
+            "title": "Get Branch",
+            "description": "Get Branch",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__branches__branch_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__collaborators": {
+            "main": "./lib/actions/get_repos__owner___repo__collaborators.js",
+            "title": "List.\nWhen authenticating as an organization owner of an organization-owned\nrepository, all organization owners are included in the list of\ncollaborators. Otherwise, only users with access to the repository are\nreturned in the collaborators list.\n",
+            "description": "List.\nWhen authenticating as an organization owner of an organization-owned\nrepository, all organization owners are included in the list of\ncollaborators. Otherwise, only users with access to the repository are\nreturned in the collaborators list.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__collaborators.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__collaborators__user_": {
+            "main": "./lib/actions/delete_repos__owner___repo__collaborators__user_.js",
+            "title": "Remove collaborator.",
+            "description": "Remove collaborator.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__collaborators__user_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__collaborators__user_": {
+            "main": "./lib/actions/get_repos__owner___repo__collaborators__user_.js",
+            "title": "Check if user is a collaborator",
+            "description": "Check if user is a collaborator",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__collaborators__user_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_repos__owner___repo__collaborators__user_": {
+            "main": "./lib/actions/put_repos__owner___repo__collaborators__user_.js",
+            "title": "Add collaborator.",
+            "description": "Add collaborator.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_repos__owner___repo__collaborators__user_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__comments": {
+            "main": "./lib/actions/get_repos__owner___repo__comments.js",
+            "title": "List commit comments for a repository.\nComments are ordered by ascending ID.\n",
+            "description": "List commit comments for a repository.\nComments are ordered by ascending ID.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__comments__commentId_": {
+            "main": "./lib/actions/delete_repos__owner___repo__comments__commentId_.js",
+            "title": "Delete a commit comment",
+            "description": "Delete a commit comment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__comments__commentId_": {
+            "main": "./lib/actions/get_repos__owner___repo__comments__commentId_.js",
+            "title": "Get a single commit comment.",
+            "description": "Get a single commit comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo__comments__commentId_": {
+            "main": "./lib/actions/patch_repos__owner___repo__comments__commentId_.js",
+            "title": "Update a commit comment.",
+            "description": "Update a commit comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo__comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__commits": {
+            "main": "./lib/actions/get_repos__owner___repo__commits.js",
+            "title": "List commits on a repository.",
+            "description": "List commits on a repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__commits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__commits__ref__status": {
+            "main": "./lib/actions/get_repos__owner___repo__commits__ref__status.js",
+            "title": "Get the combined Status for a specific Ref\nThe Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details.\nTo access this endpoint during the preview period, you must provide a custom media type in the Accept header:\napplication/vnd.github.she-hulk-preview+json\n",
+            "description": "Get the combined Status for a specific Ref\nThe Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details.\nTo access this endpoint during the preview period, you must provide a custom media type in the Accept header:\napplication/vnd.github.she-hulk-preview+json\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__commits__ref__status.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__commits__shaCode_": {
+            "main": "./lib/actions/get_repos__owner___repo__commits__shaCode_.js",
+            "title": "Get a single commit.",
+            "description": "Get a single commit.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__commits__shaCode_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__commits__shaCode__comments": {
+            "main": "./lib/actions/get_repos__owner___repo__commits__shaCode__comments.js",
+            "title": "List comments for a single commitList comments for a single commit.",
+            "description": "List comments for a single commitList comments for a single commit.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__commits__shaCode__comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__commits__shaCode__comments": {
+            "main": "./lib/actions/post_repos__owner___repo__commits__shaCode__comments.js",
+            "title": "Create a commit comment.",
+            "description": "Create a commit comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__commits__shaCode__comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__compare__baseId_____headId_": {
+            "main": "./lib/actions/get_repos__owner___repo__compare__baseId_____headId_.js",
+            "title": "Compare two commits",
+            "description": "Compare two commits",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__compare__baseId_____headId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__contents__path_": {
+            "main": "./lib/actions/delete_repos__owner___repo__contents__path_.js",
+            "title": "Delete a file.\nThis method deletes a file in a repository.\n",
+            "description": "Delete a file.\nThis method deletes a file in a repository.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__contents__path_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__contents__path_": {
+            "main": "./lib/actions/get_repos__owner___repo__contents__path_.js",
+            "title": "Get contents.\nThis method returns the contents of a file or directory in a repository.\nFiles and symlinks support a custom media type for getting the raw content.\nDirectories and submodules do not support custom media types.\nNote: This API supports files up to 1 megabyte in size.\nHere can be many outcomes. For details see \"http://developer.github.com/v3/repos/contents/\"\n",
+            "description": "Get contents.\nThis method returns the contents of a file or directory in a repository.\nFiles and symlinks support a custom media type for getting the raw content.\nDirectories and submodules do not support custom media types.\nNote: This API supports files up to 1 megabyte in size.\nHere can be many outcomes. For details see \"http://developer.github.com/v3/repos/contents/\"\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__contents__path_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_repos__owner___repo__contents__path_": {
+            "main": "./lib/actions/put_repos__owner___repo__contents__path_.js",
+            "title": "Create a file.",
+            "description": "Create a file.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_repos__owner___repo__contents__path_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__contributors": {
+            "main": "./lib/actions/get_repos__owner___repo__contributors.js",
+            "title": "Get list of contributors.",
+            "description": "Get list of contributors.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__contributors.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__deployments": {
+            "main": "./lib/actions/get_repos__owner___repo__deployments.js",
+            "title": "Users with pull access can view deployments for a repository",
+            "description": "Users with pull access can view deployments for a repository",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__deployments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__deployments": {
+            "main": "./lib/actions/post_repos__owner___repo__deployments.js",
+            "title": "Users with push access can create a deployment for a given ref",
+            "description": "Users with push access can create a deployment for a given ref",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__deployments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__deployments__id__statuses": {
+            "main": "./lib/actions/get_repos__owner___repo__deployments__id__statuses.js",
+            "title": "Users with pull access can view deployment statuses for a deployment",
+            "description": "Users with pull access can view deployment statuses for a deployment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__deployments__id__statuses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__deployments__id__statuses": {
+            "main": "./lib/actions/post_repos__owner___repo__deployments__id__statuses.js",
+            "title": "Create a Deployment Status\nUsers with push access can create deployment statuses for a given deployment:\n",
+            "description": "Create a Deployment Status\nUsers with push access can create deployment statuses for a given deployment:\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__deployments__id__statuses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__downloads": {
+            "main": "./lib/actions/get_repos__owner___repo__downloads.js",
+            "title": "Deprecated. List downloads for a repository.",
+            "description": "Deprecated. List downloads for a repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__downloads.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__downloads__downloadId_": {
+            "main": "./lib/actions/delete_repos__owner___repo__downloads__downloadId_.js",
+            "title": "Deprecated. Delete a download.",
+            "description": "Deprecated. Delete a download.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__downloads__downloadId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__downloads__downloadId_": {
+            "main": "./lib/actions/get_repos__owner___repo__downloads__downloadId_.js",
+            "title": "Deprecated. Get a single download.",
+            "description": "Deprecated. Get a single download.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__downloads__downloadId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__events": {
+            "main": "./lib/actions/get_repos__owner___repo__events.js",
+            "title": "Get list of repository events.",
+            "description": "Get list of repository events.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__events.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__forks": {
+            "main": "./lib/actions/get_repos__owner___repo__forks.js",
+            "title": "List forks.",
+            "description": "List forks.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__forks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__forks": {
+            "main": "./lib/actions/post_repos__owner___repo__forks.js",
+            "title": "Create a fork.\nForking a Repository happens asynchronously. Therefore, you may have to wai\na short period before accessing the git objects. If this takes longer than 5\nminutes, be sure to contact Support.\n",
+            "description": "Create a fork.\nForking a Repository happens asynchronously. Therefore, you may have to wai\na short period before accessing the git objects. If this takes longer than 5\nminutes, be sure to contact Support.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__forks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__git_blobs": {
+            "main": "./lib/actions/post_repos__owner___repo__git_blobs.js",
+            "title": "Create a Blob.",
+            "description": "Create a Blob.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__git_blobs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__git_blobs__shaCode_": {
+            "main": "./lib/actions/get_repos__owner___repo__git_blobs__shaCode_.js",
+            "title": "Get a Blob.\nSince blobs can be any arbitrary binary data, the input and responses for\nthe blob API takes an encoding parameter that can be either utf-8 or\nbase64. If your data cannot be losslessly sent as a UTF-8 string, you can\nbase64 encode it.\n",
+            "description": "Get a Blob.\nSince blobs can be any arbitrary binary data, the input and responses for\nthe blob API takes an encoding parameter that can be either utf-8 or\nbase64. If your data cannot be losslessly sent as a UTF-8 string, you can\nbase64 encode it.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__git_blobs__shaCode_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__git_commits": {
+            "main": "./lib/actions/post_repos__owner___repo__git_commits.js",
+            "title": "Create a Commit.",
+            "description": "Create a Commit.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__git_commits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__git_commits__shaCode_": {
+            "main": "./lib/actions/get_repos__owner___repo__git_commits__shaCode_.js",
+            "title": "Get a Commit.",
+            "description": "Get a Commit.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__git_commits__shaCode_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__git_refs": {
+            "main": "./lib/actions/get_repos__owner___repo__git_refs.js",
+            "title": "Get all References",
+            "description": "Get all References",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__git_refs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__git_refs": {
+            "main": "./lib/actions/post_repos__owner___repo__git_refs.js",
+            "title": "Create a Reference",
+            "description": "Create a Reference",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__git_refs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__git_refs__ref_": {
+            "main": "./lib/actions/delete_repos__owner___repo__git_refs__ref_.js",
+            "title": "Delete a Reference\nExample: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a \nExample: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0\n",
+            "description": "Delete a Reference\nExample: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a \nExample: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__git_refs__ref_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__git_refs__ref_": {
+            "main": "./lib/actions/get_repos__owner___repo__git_refs__ref_.js",
+            "title": "Get a Reference",
+            "description": "Get a Reference",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__git_refs__ref_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo__git_refs__ref_": {
+            "main": "./lib/actions/patch_repos__owner___repo__git_refs__ref_.js",
+            "title": "Update a Reference",
+            "description": "Update a Reference",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo__git_refs__ref_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__git_tags": {
+            "main": "./lib/actions/post_repos__owner___repo__git_tags.js",
+            "title": "Create a Tag Object.\nNote that creating a tag object does not create the reference that makes a\ntag in Git. If you want to create an annotated tag in Git, you have to do\nthis call to create the tag object, and then create the refs/tags/[tag]\nreference. If you want to create a lightweight tag, you only have to create\nthe tag reference - this call would be unnecessary.\n",
+            "description": "Create a Tag Object.\nNote that creating a tag object does not create the reference that makes a\ntag in Git. If you want to create an annotated tag in Git, you have to do\nthis call to create the tag object, and then create the refs/tags/[tag]\nreference. If you want to create a lightweight tag, you only have to create\nthe tag reference - this call would be unnecessary.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__git_tags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__git_tags__shaCode_": {
+            "main": "./lib/actions/get_repos__owner___repo__git_tags__shaCode_.js",
+            "title": "Get a Tag.",
+            "description": "Get a Tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__git_tags__shaCode_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__git_trees": {
+            "main": "./lib/actions/post_repos__owner___repo__git_trees.js",
+            "title": "Create a Tree.\nThe tree creation API will take nested entries as well. If both a tree and\na nested path modifying that tree are specified, it will overwrite the\ncontents of that tree with the new path contents and write a new tree out.\n",
+            "description": "Create a Tree.\nThe tree creation API will take nested entries as well. If both a tree and\na nested path modifying that tree are specified, it will overwrite the\ncontents of that tree with the new path contents and write a new tree out.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__git_trees.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__git_trees__shaCode_": {
+            "main": "./lib/actions/get_repos__owner___repo__git_trees__shaCode_.js",
+            "title": "Get a Tree.",
+            "description": "Get a Tree.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__git_trees__shaCode_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__hooks": {
+            "main": "./lib/actions/get_repos__owner___repo__hooks.js",
+            "title": "Get list of hooks.",
+            "description": "Get list of hooks.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__hooks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__hooks": {
+            "main": "./lib/actions/post_repos__owner___repo__hooks.js",
+            "title": "Create a hook.",
+            "description": "Create a hook.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__hooks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__hooks__hookId_": {
+            "main": "./lib/actions/delete_repos__owner___repo__hooks__hookId_.js",
+            "title": "Delete a hook.",
+            "description": "Delete a hook.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__hooks__hookId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__hooks__hookId_": {
+            "main": "./lib/actions/get_repos__owner___repo__hooks__hookId_.js",
+            "title": "Get single hook.",
+            "description": "Get single hook.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__hooks__hookId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo__hooks__hookId_": {
+            "main": "./lib/actions/patch_repos__owner___repo__hooks__hookId_.js",
+            "title": "Edit a hook.",
+            "description": "Edit a hook.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo__hooks__hookId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__hooks__hookId__tests": {
+            "main": "./lib/actions/post_repos__owner___repo__hooks__hookId__tests.js",
+            "title": "Test a push hook.\nThis will trigger the hook with the latest push to the current repository\nif the hook is subscribed to push events. If the hook is not subscribed\nto push events, the server will respond with 204 but no test POST will\nbe generated.\nNote: Previously /repos/:owner/:repo/hooks/:id/tes\n",
+            "description": "Test a push hook.\nThis will trigger the hook with the latest push to the current repository\nif the hook is subscribed to push events. If the hook is not subscribed\nto push events, the server will respond with 204 but no test POST will\nbe generated.\nNote: Previously /repos/:owner/:repo/hooks/:id/tes\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__hooks__hookId__tests.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__issues": {
+            "main": "./lib/actions/get_repos__owner___repo__issues.js",
+            "title": "List issues for a repository.",
+            "description": "List issues for a repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__issues.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__issues": {
+            "main": "./lib/actions/post_repos__owner___repo__issues.js",
+            "title": "Create an issue.\nAny user with pull access to a repository can create an issue.\n",
+            "description": "Create an issue.\nAny user with pull access to a repository can create an issue.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__issues.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__issues_comments": {
+            "main": "./lib/actions/get_repos__owner___repo__issues_comments.js",
+            "title": "List comments in a repository.",
+            "description": "List comments in a repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__issues_comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__issues_comments__commentId_": {
+            "main": "./lib/actions/delete_repos__owner___repo__issues_comments__commentId_.js",
+            "title": "Delete a comment.",
+            "description": "Delete a comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__issues_comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__issues_comments__commentId_": {
+            "main": "./lib/actions/get_repos__owner___repo__issues_comments__commentId_.js",
+            "title": "Get a single comment.",
+            "description": "Get a single comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__issues_comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo__issues_comments__commentId_": {
+            "main": "./lib/actions/patch_repos__owner___repo__issues_comments__commentId_.js",
+            "title": "Edit a comment.",
+            "description": "Edit a comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo__issues_comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__issues_events": {
+            "main": "./lib/actions/get_repos__owner___repo__issues_events.js",
+            "title": "List issue events for a repository.",
+            "description": "List issue events for a repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__issues_events.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__issues_events__eventId_": {
+            "main": "./lib/actions/get_repos__owner___repo__issues_events__eventId_.js",
+            "title": "Get a single event.",
+            "description": "Get a single event.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__issues_events__eventId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__issues__number_": {
+            "main": "./lib/actions/get_repos__owner___repo__issues__number_.js",
+            "title": "Get a single issue",
+            "description": "Get a single issue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__issues__number_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo__issues__number_": {
+            "main": "./lib/actions/patch_repos__owner___repo__issues__number_.js",
+            "title": "Edit an issue.\nIssue owners and users with push access can edit an issue.\n",
+            "description": "Edit an issue.\nIssue owners and users with push access can edit an issue.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo__issues__number_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__issues__number__comments": {
+            "main": "./lib/actions/get_repos__owner___repo__issues__number__comments.js",
+            "title": "List comments on an issue.",
+            "description": "List comments on an issue.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__issues__number__comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__issues__number__comments": {
+            "main": "./lib/actions/post_repos__owner___repo__issues__number__comments.js",
+            "title": "Create a comment.",
+            "description": "Create a comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__issues__number__comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__issues__number__events": {
+            "main": "./lib/actions/get_repos__owner___repo__issues__number__events.js",
+            "title": "List events for an issue.",
+            "description": "List events for an issue.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__issues__number__events.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__issues__number__labels": {
+            "main": "./lib/actions/delete_repos__owner___repo__issues__number__labels.js",
+            "title": "Remove all labels from an issue.",
+            "description": "Remove all labels from an issue.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__issues__number__labels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__issues__number__labels": {
+            "main": "./lib/actions/get_repos__owner___repo__issues__number__labels.js",
+            "title": "List labels on an issue.",
+            "description": "List labels on an issue.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__issues__number__labels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__issues__number__labels": {
+            "main": "./lib/actions/post_repos__owner___repo__issues__number__labels.js",
+            "title": "Add labels to an issue.",
+            "description": "Add labels to an issue.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__issues__number__labels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_repos__owner___repo__issues__number__labels": {
+            "main": "./lib/actions/put_repos__owner___repo__issues__number__labels.js",
+            "title": "Replace all labels for an issue.\nSending an empty array ([]) will remove all Labels from the Issue.\n",
+            "description": "Replace all labels for an issue.\nSending an empty array ([]) will remove all Labels from the Issue.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_repos__owner___repo__issues__number__labels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__issues__number__labels__name_": {
+            "main": "./lib/actions/delete_repos__owner___repo__issues__number__labels__name_.js",
+            "title": "Remove a label from an issue.",
+            "description": "Remove a label from an issue.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__issues__number__labels__name_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__keys": {
+            "main": "./lib/actions/get_repos__owner___repo__keys.js",
+            "title": "Get list of keys.",
+            "description": "Get list of keys.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__keys.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__keys": {
+            "main": "./lib/actions/post_repos__owner___repo__keys.js",
+            "title": "Create a key.",
+            "description": "Create a key.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__keys.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__keys__keyId_": {
+            "main": "./lib/actions/delete_repos__owner___repo__keys__keyId_.js",
+            "title": "Delete a key.",
+            "description": "Delete a key.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__keys__keyId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__keys__keyId_": {
+            "main": "./lib/actions/get_repos__owner___repo__keys__keyId_.js",
+            "title": "Get a key",
+            "description": "Get a key",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__keys__keyId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__labels": {
+            "main": "./lib/actions/get_repos__owner___repo__labels.js",
+            "title": "List all labels for this repository.",
+            "description": "List all labels for this repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__labels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__labels": {
+            "main": "./lib/actions/post_repos__owner___repo__labels.js",
+            "title": "Create a label.",
+            "description": "Create a label.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__labels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__labels__name_": {
+            "main": "./lib/actions/delete_repos__owner___repo__labels__name_.js",
+            "title": "Delete a label.",
+            "description": "Delete a label.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__labels__name_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__labels__name_": {
+            "main": "./lib/actions/get_repos__owner___repo__labels__name_.js",
+            "title": "Get a single label.",
+            "description": "Get a single label.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__labels__name_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo__labels__name_": {
+            "main": "./lib/actions/patch_repos__owner___repo__labels__name_.js",
+            "title": "Update a label.",
+            "description": "Update a label.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo__labels__name_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__languages": {
+            "main": "./lib/actions/get_repos__owner___repo__languages.js",
+            "title": "List languages.\nList languages for the specified repository. The value on the right of a\nlanguage is the number of bytes of code written in that language.\n",
+            "description": "List languages.\nList languages for the specified repository. The value on the right of a\nlanguage is the number of bytes of code written in that language.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__languages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__merges": {
+            "main": "./lib/actions/post_repos__owner___repo__merges.js",
+            "title": "Perform a merge.",
+            "description": "Perform a merge.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__merges.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__milestones": {
+            "main": "./lib/actions/get_repos__owner___repo__milestones.js",
+            "title": "List milestones for a repository.",
+            "description": "List milestones for a repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__milestones.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__milestones": {
+            "main": "./lib/actions/post_repos__owner___repo__milestones.js",
+            "title": "Create a milestone.",
+            "description": "Create a milestone.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__milestones.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__milestones__number_": {
+            "main": "./lib/actions/delete_repos__owner___repo__milestones__number_.js",
+            "title": "Delete a milestone.",
+            "description": "Delete a milestone.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__milestones__number_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__milestones__number_": {
+            "main": "./lib/actions/get_repos__owner___repo__milestones__number_.js",
+            "title": "Get a single milestone.",
+            "description": "Get a single milestone.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__milestones__number_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo__milestones__number_": {
+            "main": "./lib/actions/patch_repos__owner___repo__milestones__number_.js",
+            "title": "Update a milestone.",
+            "description": "Update a milestone.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo__milestones__number_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__milestones__number__labels": {
+            "main": "./lib/actions/get_repos__owner___repo__milestones__number__labels.js",
+            "title": "Get labels for every issue in a milestone.",
+            "description": "Get labels for every issue in a milestone.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__milestones__number__labels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__notifications": {
+            "main": "./lib/actions/get_repos__owner___repo__notifications.js",
+            "title": "List your notifications in a repository\nList all notifications for the current user.\n",
+            "description": "List your notifications in a repository\nList all notifications for the current user.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__notifications.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_repos__owner___repo__notifications": {
+            "main": "./lib/actions/put_repos__owner___repo__notifications.js",
+            "title": "Mark notifications as read in a repository.\nMarking all notifications in a repository as \"read\" removes them from the\ndefault view on GitHub.com.\n",
+            "description": "Mark notifications as read in a repository.\nMarking all notifications in a repository as \"read\" removes them from the\ndefault view on GitHub.com.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_repos__owner___repo__notifications.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__pulls": {
+            "main": "./lib/actions/get_repos__owner___repo__pulls.js",
+            "title": "List pull requests.",
+            "description": "List pull requests.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__pulls.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__pulls": {
+            "main": "./lib/actions/post_repos__owner___repo__pulls.js",
+            "title": "Create a pull request.",
+            "description": "Create a pull request.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__pulls.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__pulls_comments": {
+            "main": "./lib/actions/get_repos__owner___repo__pulls_comments.js",
+            "title": "List comments in a repository.\nBy default, Review Comments are ordered by ascending ID.\n",
+            "description": "List comments in a repository.\nBy default, Review Comments are ordered by ascending ID.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__pulls_comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__pulls_comments__commentId_": {
+            "main": "./lib/actions/delete_repos__owner___repo__pulls_comments__commentId_.js",
+            "title": "Delete a comment.",
+            "description": "Delete a comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__pulls_comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__pulls_comments__commentId_": {
+            "main": "./lib/actions/get_repos__owner___repo__pulls_comments__commentId_.js",
+            "title": "Get a single comment.",
+            "description": "Get a single comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__pulls_comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo__pulls_comments__commentId_": {
+            "main": "./lib/actions/patch_repos__owner___repo__pulls_comments__commentId_.js",
+            "title": "Edit a comment.",
+            "description": "Edit a comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo__pulls_comments__commentId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__pulls__number_": {
+            "main": "./lib/actions/get_repos__owner___repo__pulls__number_.js",
+            "title": "Get a single pull request.",
+            "description": "Get a single pull request.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__pulls__number_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo__pulls__number_": {
+            "main": "./lib/actions/patch_repos__owner___repo__pulls__number_.js",
+            "title": "Update a pull request.",
+            "description": "Update a pull request.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo__pulls__number_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__pulls__number__comments": {
+            "main": "./lib/actions/get_repos__owner___repo__pulls__number__comments.js",
+            "title": "List comments on a pull request.",
+            "description": "List comments on a pull request.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__pulls__number__comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__pulls__number__comments": {
+            "main": "./lib/actions/post_repos__owner___repo__pulls__number__comments.js",
+            "title": "Create a comment.\n  #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )\n  description: |\n    Alternative Input.\n    Instead of passing commit_id, path, and position you can reply to an\n    existing Pull Request Comment like this:\n\n        body\n           Required string\n        in_reply_to\n           Required number - Comment id to reply to.\n",
+            "description": "Create a comment.\n  #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )\n  description: |\n    Alternative Input.\n    Instead of passing commit_id, path, and position you can reply to an\n    existing Pull Request Comment like this:\n\n        body\n           Required string\n        in_reply_to\n           Required number - Comment id to reply to.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__pulls__number__comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__pulls__number__commits": {
+            "main": "./lib/actions/get_repos__owner___repo__pulls__number__commits.js",
+            "title": "List commits on a pull request.",
+            "description": "List commits on a pull request.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__pulls__number__commits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__pulls__number__files": {
+            "main": "./lib/actions/get_repos__owner___repo__pulls__number__files.js",
+            "title": "List pull requests files.",
+            "description": "List pull requests files.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__pulls__number__files.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__pulls__number__merge": {
+            "main": "./lib/actions/get_repos__owner___repo__pulls__number__merge.js",
+            "title": "Get if a pull request has been merged.",
+            "description": "Get if a pull request has been merged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__pulls__number__merge.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_repos__owner___repo__pulls__number__merge": {
+            "main": "./lib/actions/put_repos__owner___repo__pulls__number__merge.js",
+            "title": "Merge a pull request (Merge Button's)",
+            "description": "Merge a pull request (Merge Button's)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_repos__owner___repo__pulls__number__merge.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__readme": {
+            "main": "./lib/actions/get_repos__owner___repo__readme.js",
+            "title": "Get the README.\nThis method returns the preferred README for a repository.\n",
+            "description": "Get the README.\nThis method returns the preferred README for a repository.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__readme.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__releases": {
+            "main": "./lib/actions/get_repos__owner___repo__releases.js",
+            "title": "Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only",
+            "description": "Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__releases.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__releases": {
+            "main": "./lib/actions/post_repos__owner___repo__releases.js",
+            "title": "Create a release\nUsers with push access to the repository can create a release.\n",
+            "description": "Create a release\nUsers with push access to the repository can create a release.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__releases.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__releases_assets__id_": {
+            "main": "./lib/actions/delete_repos__owner___repo__releases_assets__id_.js",
+            "title": "Delete a release asset",
+            "description": "Delete a release asset",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__releases_assets__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__releases_assets__id_": {
+            "main": "./lib/actions/get_repos__owner___repo__releases_assets__id_.js",
+            "title": "Get a single release asset",
+            "description": "Get a single release asset",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__releases_assets__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo__releases_assets__id_": {
+            "main": "./lib/actions/patch_repos__owner___repo__releases_assets__id_.js",
+            "title": "Edit a release asset\nUsers with push access to the repository can edit a release asset.\n",
+            "description": "Edit a release asset\nUsers with push access to the repository can edit a release asset.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo__releases_assets__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__releases__id_": {
+            "main": "./lib/actions/delete_repos__owner___repo__releases__id_.js",
+            "title": "Users with push access to the repository can delete a release.",
+            "description": "Users with push access to the repository can delete a release.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__releases__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__releases__id_": {
+            "main": "./lib/actions/get_repos__owner___repo__releases__id_.js",
+            "title": "Get a single release",
+            "description": "Get a single release",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__releases__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_repos__owner___repo__releases__id_": {
+            "main": "./lib/actions/patch_repos__owner___repo__releases__id_.js",
+            "title": "Users with push access to the repository can edit a release",
+            "description": "Users with push access to the repository can edit a release",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_repos__owner___repo__releases__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__releases__id__assets": {
+            "main": "./lib/actions/get_repos__owner___repo__releases__id__assets.js",
+            "title": "List assets for a release",
+            "description": "List assets for a release",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__releases__id__assets.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__stargazers": {
+            "main": "./lib/actions/get_repos__owner___repo__stargazers.js",
+            "title": "List Stargazers.",
+            "description": "List Stargazers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__stargazers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__stats_code_frequency": {
+            "main": "./lib/actions/get_repos__owner___repo__stats_code_frequency.js",
+            "title": "Get the number of additions and deletions per week.\nReturns a weekly aggregate of the number of additions and deletions pushed\nto a repository.\n",
+            "description": "Get the number of additions and deletions per week.\nReturns a weekly aggregate of the number of additions and deletions pushed\nto a repository.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__stats_code_frequency.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__stats_commit_activity": {
+            "main": "./lib/actions/get_repos__owner___repo__stats_commit_activity.js",
+            "title": "Get the last year of commit activity data.\nReturns the last year of commit activity grouped by week. The days array\nis a group of commits per day, starting on Sunday.\n",
+            "description": "Get the last year of commit activity data.\nReturns the last year of commit activity grouped by week. The days array\nis a group of commits per day, starting on Sunday.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__stats_commit_activity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__stats_contributors": {
+            "main": "./lib/actions/get_repos__owner___repo__stats_contributors.js",
+            "title": "Get contributors list with additions, deletions, and commit counts.",
+            "description": "Get contributors list with additions, deletions, and commit counts.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__stats_contributors.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__stats_participation": {
+            "main": "./lib/actions/get_repos__owner___repo__stats_participation.js",
+            "title": "Get the weekly commit count for the repo owner and everyone else.",
+            "description": "Get the weekly commit count for the repo owner and everyone else.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__stats_participation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__stats_punch_card": {
+            "main": "./lib/actions/get_repos__owner___repo__stats_punch_card.js",
+            "title": "Get the number of commits per hour in each day.\nEach array contains the day number, hour number, and number of commits\n0-6 Sunday - Saturday\n0-23 Hour of day\nNumber of commits\n\nFor example, [2, 14, 25] indicates that there were 25 total commits, during\nthe 2.00pm hour on Tuesdays. All times are based on the time zone of\nindividual commits.\n",
+            "description": "Get the number of commits per hour in each day.\nEach array contains the day number, hour number, and number of commits\n0-6 Sunday - Saturday\n0-23 Hour of day\nNumber of commits\n\nFor example, [2, 14, 25] indicates that there were 25 total commits, during\nthe 2.00pm hour on Tuesdays. All times are based on the time zone of\nindividual commits.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__stats_punch_card.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__statuses__ref_": {
+            "main": "./lib/actions/get_repos__owner___repo__statuses__ref_.js",
+            "title": "List Statuses for a specific Ref.",
+            "description": "List Statuses for a specific Ref.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__statuses__ref_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_repos__owner___repo__statuses__ref_": {
+            "main": "./lib/actions/post_repos__owner___repo__statuses__ref_.js",
+            "title": "Create a Status.",
+            "description": "Create a Status.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_repos__owner___repo__statuses__ref_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__subscribers": {
+            "main": "./lib/actions/get_repos__owner___repo__subscribers.js",
+            "title": "List watchers.",
+            "description": "List watchers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__subscribers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_repos__owner___repo__subscription": {
+            "main": "./lib/actions/delete_repos__owner___repo__subscription.js",
+            "title": "Delete a Repository Subscription.",
+            "description": "Delete a Repository Subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_repos__owner___repo__subscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__subscription": {
+            "main": "./lib/actions/get_repos__owner___repo__subscription.js",
+            "title": "Get a Repository Subscription.",
+            "description": "Get a Repository Subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__subscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_repos__owner___repo__subscription": {
+            "main": "./lib/actions/put_repos__owner___repo__subscription.js",
+            "title": "Set a Repository Subscription",
+            "description": "Set a Repository Subscription",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_repos__owner___repo__subscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__tags": {
+            "main": "./lib/actions/get_repos__owner___repo__tags.js",
+            "title": "Get list of tags.",
+            "description": "Get list of tags.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__tags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__teams": {
+            "main": "./lib/actions/get_repos__owner___repo__teams.js",
+            "title": "Get list of teams",
+            "description": "Get list of teams",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__teams.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo__watchers": {
+            "main": "./lib/actions/get_repos__owner___repo__watchers.js",
+            "title": "List Stargazers. New implementation.",
+            "description": "List Stargazers. New implementation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo__watchers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repos__owner___repo___archive_format___path_": {
+            "main": "./lib/actions/get_repos__owner___repo___archive_format___path_.js",
+            "title": "Get archive link.\nThis method will return a 302 to a URL to download a tarball or zipball\narchive for a repository. Please make sure your HTTP framework is\nconfigured to follow redirects or you will need to use the Location header\nto make a second GET request.\nNote: For private repositories, these links are temporary and expire quickly.\n",
+            "description": "Get archive link.\nThis method will return a 302 to a URL to download a tarball or zipball\narchive for a repository. Please make sure your HTTP framework is\nconfigured to follow redirects or you will need to use the Location header\nto make a second GET request.\nNote: For private repositories, these links are temporary and expire quickly.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repos__owner___repo___archive_format___path_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_repositories": {
+            "main": "./lib/actions/get_repositories.js",
+            "title": "List all public repositories.\nThis provides a dump of every public repository, in the order that they\nwere created.\nNote: Pagination is powered exclusively by the since parameter. is the\nLink header to get the URL for the next page of repositories.\n",
+            "description": "List all public repositories.\nThis provides a dump of every public repository, in the order that they\nwere created.\nNote: Pagination is powered exclusively by the since parameter. is the\nLink header to get the URL for the next page of repositories.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_repositories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_search_code": {
+            "main": "./lib/actions/get_search_code.js",
+            "title": "Search code.",
+            "description": "Search code.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_search_code.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_search_issues": {
+            "main": "./lib/actions/get_search_issues.js",
+            "title": "Find issues by state and keyword. (This method returns up to 100 results per page.)",
+            "description": "Find issues by state and keyword. (This method returns up to 100 results per page.)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_search_issues.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_search_repositories": {
+            "main": "./lib/actions/get_search_repositories.js",
+            "title": "Search repositories.",
+            "description": "Search repositories.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_search_repositories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_search_users": {
+            "main": "./lib/actions/get_search_users.js",
+            "title": "Search users.",
+            "description": "Search users.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_search_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_teams__teamId_": {
+            "main": "./lib/actions/delete_teams__teamId_.js",
+            "title": "Delete team.\nIn order to delete a team, the authenticated user must be an owner of the\norg that the team is associated with.\n",
+            "description": "Delete team.\nIn order to delete a team, the authenticated user must be an owner of the\norg that the team is associated with.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_teams__teamId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_teams__teamId_": {
+            "main": "./lib/actions/get_teams__teamId_.js",
+            "title": "Get team.",
+            "description": "Get team.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_teams__teamId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_teams__teamId_": {
+            "main": "./lib/actions/patch_teams__teamId_.js",
+            "title": "Edit team.\nIn order to edit a team, the authenticated user must be an owner of the org\nthat the team is associated with.\n",
+            "description": "Edit team.\nIn order to edit a team, the authenticated user must be an owner of the org\nthat the team is associated with.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_teams__teamId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_teams__teamId__members": {
+            "main": "./lib/actions/get_teams__teamId__members.js",
+            "title": "List team members.\nIn order to list members in a team, the authenticated user must be a member\nof the team.\n",
+            "description": "List team members.\nIn order to list members in a team, the authenticated user must be a member\nof the team.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_teams__teamId__members.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_teams__teamId__members__username_": {
+            "main": "./lib/actions/delete_teams__teamId__members__username_.js",
+            "title": "The \"Remove team member\" API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.\n\nRemove team member.\nIn order to remove a user from a team, the authenticated user must have 'admin'\npermissions to the team or be an owner of the org that the team is associated\nwith.\nNOTE This does not delete the user, it just remove them from the team.\n",
+            "description": "The \"Remove team member\" API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.\n\nRemove team member.\nIn order to remove a user from a team, the authenticated user must have 'admin'\npermissions to the team or be an owner of the org that the team is associated\nwith.\nNOTE This does not delete the user, it just remove them from the team.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_teams__teamId__members__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_teams__teamId__members__username_": {
+            "main": "./lib/actions/get_teams__teamId__members__username_.js",
+            "title": "The \"Get team member\" API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.\n\nGet team member.\nIn order to get if a user is a member of a team, the authenticated user mus\nbe a member of the team.\n",
+            "description": "The \"Get team member\" API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.\n\nGet team member.\nIn order to get if a user is a member of a team, the authenticated user mus\nbe a member of the team.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_teams__teamId__members__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_teams__teamId__members__username_": {
+            "main": "./lib/actions/put_teams__teamId__members__username_.js",
+            "title": "The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.\n\nAdd team member.\nIn order to add a user to a team, the authenticated user must have 'admin'\npermissions to the team or be an owner of the org that the team is associated\nwith.\n",
+            "description": "The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.\n\nAdd team member.\nIn order to add a user to a team, the authenticated user must have 'admin'\npermissions to the team or be an owner of the org that the team is associated\nwith.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_teams__teamId__members__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_teams__teamId__memberships__username_": {
+            "main": "./lib/actions/delete_teams__teamId__memberships__username_.js",
+            "title": "Remove team membership.\nIn order to remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.\n",
+            "description": "Remove team membership.\nIn order to remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_teams__teamId__memberships__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_teams__teamId__memberships__username_": {
+            "main": "./lib/actions/get_teams__teamId__memberships__username_.js",
+            "title": "Get team membership.\nIn order to get a user's membership with a team, the authenticated user must be a member of the team or an owner of the team's organization.\n",
+            "description": "Get team membership.\nIn order to get a user's membership with a team, the authenticated user must be a member of the team or an owner of the team's organization.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_teams__teamId__memberships__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_teams__teamId__memberships__username_": {
+            "main": "./lib/actions/put_teams__teamId__memberships__username_.js",
+            "title": "Add team membership.\nIn order to add a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with.\n\nIf the user is already a part of the team's organization (meaning they're on at least one other team in the organization), this endpoint will add the user to the team.\n\nIf the user is completely unaffiliated with the team's organization (meaning they're on none of the organization's teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the 'pending' state until the user accepts the invitation, at which point the membership will transition to the 'active' state and the user will be added as a member of the team.\n",
+            "description": "Add team membership.\nIn order to add a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with.\n\nIf the user is already a part of the team's organization (meaning they're on at least one other team in the organization), this endpoint will add the user to the team.\n\nIf the user is completely unaffiliated with the team's organization (meaning they're on none of the organization's teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the 'pending' state until the user accepts the invitation, at which point the membership will transition to the 'active' state and the user will be added as a member of the team.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_teams__teamId__memberships__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_teams__teamId__repos": {
+            "main": "./lib/actions/get_teams__teamId__repos.js",
+            "title": "List team repos",
+            "description": "List team repos",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_teams__teamId__repos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_teams__teamId__repos__owner___repo_": {
+            "main": "./lib/actions/delete_teams__teamId__repos__owner___repo_.js",
+            "title": "In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team.",
+            "description": "In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_teams__teamId__repos__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_teams__teamId__repos__owner___repo_": {
+            "main": "./lib/actions/get_teams__teamId__repos__owner___repo_.js",
+            "title": "Check if a team manages a repository",
+            "description": "Check if a team manages a repository",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_teams__teamId__repos__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_teams__teamId__repos__owner___repo_": {
+            "main": "./lib/actions/put_teams__teamId__repos__owner___repo_.js",
+            "title": "In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.",
+            "description": "In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_teams__teamId__repos__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user": {
+            "main": "./lib/actions/get_user.js",
+            "title": "Get the authenticated user.",
+            "description": "Get the authenticated user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_user": {
+            "main": "./lib/actions/patch_user.js",
+            "title": "Update the authenticated user.",
+            "description": "Update the authenticated user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_user.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_user_emails": {
+            "main": "./lib/actions/delete_user_emails.js",
+            "title": "Delete email address(es).\nYou can include a single email address or an array of addresses.\n",
+            "description": "Delete email address(es).\nYou can include a single email address or an array of addresses.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_user_emails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_emails": {
+            "main": "./lib/actions/get_user_emails.js",
+            "title": "List email addresses for a user.\nIn the final version of the API, this method will return an array of hashes\nwith extended information for each email address indicating if the address\nhas been verified and if it's primary email address for GitHub.\nUntil API v3 is finalized, use the application/vnd.github.v3 media type to\nget other response format.\n",
+            "description": "List email addresses for a user.\nIn the final version of the API, this method will return an array of hashes\nwith extended information for each email address indicating if the address\nhas been verified and if it's primary email address for GitHub.\nUntil API v3 is finalized, use the application/vnd.github.v3 media type to\nget other response format.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_emails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_user_emails": {
+            "main": "./lib/actions/post_user_emails.js",
+            "title": "Add email address(es).\nYou can post a single email address or an array of addresses.\n",
+            "description": "Add email address(es).\nYou can post a single email address or an array of addresses.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_user_emails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_followers": {
+            "main": "./lib/actions/get_user_followers.js",
+            "title": "List the authenticated user's followers",
+            "description": "List the authenticated user's followers",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_followers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_following": {
+            "main": "./lib/actions/get_user_following.js",
+            "title": "List who the authenticated user is following.",
+            "description": "List who the authenticated user is following.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_following.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_user_following__username_": {
+            "main": "./lib/actions/delete_user_following__username_.js",
+            "title": "Unfollow a user.\nUnfollowing a user requires the user to be logged in and authenticated with\nbasic auth or OAuth with the user:follow scope.\n",
+            "description": "Unfollow a user.\nUnfollowing a user requires the user to be logged in and authenticated with\nbasic auth or OAuth with the user:follow scope.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_user_following__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_following__username_": {
+            "main": "./lib/actions/get_user_following__username_.js",
+            "title": "Check if you are following a user.",
+            "description": "Check if you are following a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_following__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_user_following__username_": {
+            "main": "./lib/actions/put_user_following__username_.js",
+            "title": "Follow a user.\nFollowing a user requires the user to be logged in and authenticated with\nbasic auth or OAuth with the user:follow scope.\n",
+            "description": "Follow a user.\nFollowing a user requires the user to be logged in and authenticated with\nbasic auth or OAuth with the user:follow scope.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_user_following__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_issues": {
+            "main": "./lib/actions/get_user_issues.js",
+            "title": "List issues.\nList all issues across owned and member repositories for the authenticated\nuser.\n",
+            "description": "List issues.\nList all issues across owned and member repositories for the authenticated\nuser.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_issues.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_keys": {
+            "main": "./lib/actions/get_user_keys.js",
+            "title": "List your public keys.\nLists the current user's keys. Management of public keys via the API requires\nthat you are authenticated through basic auth, or OAuth with the 'user', 'write:public_key' scopes.\n",
+            "description": "List your public keys.\nLists the current user's keys. Management of public keys via the API requires\nthat you are authenticated through basic auth, or OAuth with the 'user', 'write:public_key' scopes.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_keys.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_user_keys": {
+            "main": "./lib/actions/post_user_keys.js",
+            "title": "Create a public key.",
+            "description": "Create a public key.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_user_keys.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_user_keys__keyId_": {
+            "main": "./lib/actions/delete_user_keys__keyId_.js",
+            "title": "Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.",
+            "description": "Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_user_keys__keyId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_keys__keyId_": {
+            "main": "./lib/actions/get_user_keys__keyId_.js",
+            "title": "Get a single public key.",
+            "description": "Get a single public key.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_keys__keyId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_orgs": {
+            "main": "./lib/actions/get_user_orgs.js",
+            "title": "List public and private organizations for the authenticated user.",
+            "description": "List public and private organizations for the authenticated user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_orgs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_repos": {
+            "main": "./lib/actions/get_user_repos.js",
+            "title": "List repositories for the authenticated user. Note that this does not include\nrepositories owned by organizations which the user can access. You can lis\nuser organizations and list organization repositories separately.\n",
+            "description": "List repositories for the authenticated user. Note that this does not include\nrepositories owned by organizations which the user can access. You can lis\nuser organizations and list organization repositories separately.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_repos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_user_repos": {
+            "main": "./lib/actions/post_user_repos.js",
+            "title": "Create a new repository for the authenticated user. OAuth users must supply\nrepo scope.\n",
+            "description": "Create a new repository for the authenticated user. OAuth users must supply\nrepo scope.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_user_repos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_starred": {
+            "main": "./lib/actions/get_user_starred.js",
+            "title": "List repositories being starred by the authenticated user.",
+            "description": "List repositories being starred by the authenticated user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_starred.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_user_starred__owner___repo_": {
+            "main": "./lib/actions/delete_user_starred__owner___repo_.js",
+            "title": "Unstar a repository",
+            "description": "Unstar a repository",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_user_starred__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_starred__owner___repo_": {
+            "main": "./lib/actions/get_user_starred__owner___repo_.js",
+            "title": "Check if you are starring a repository.",
+            "description": "Check if you are starring a repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_starred__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_user_starred__owner___repo_": {
+            "main": "./lib/actions/put_user_starred__owner___repo_.js",
+            "title": "Star a repository.",
+            "description": "Star a repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_user_starred__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_subscriptions": {
+            "main": "./lib/actions/get_user_subscriptions.js",
+            "title": "List repositories being watched by the authenticated user.",
+            "description": "List repositories being watched by the authenticated user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_subscriptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_user_subscriptions__owner___repo_": {
+            "main": "./lib/actions/delete_user_subscriptions__owner___repo_.js",
+            "title": "Stop watching a repository",
+            "description": "Stop watching a repository",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_user_subscriptions__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_subscriptions__owner___repo_": {
+            "main": "./lib/actions/get_user_subscriptions__owner___repo_.js",
+            "title": "Check if you are watching a repository.",
+            "description": "Check if you are watching a repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_subscriptions__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_user_subscriptions__owner___repo_": {
+            "main": "./lib/actions/put_user_subscriptions__owner___repo_.js",
+            "title": "Watch a repository.",
+            "description": "Watch a repository.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_user_subscriptions__owner___repo_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_teams": {
+            "main": "./lib/actions/get_user_teams.js",
+            "title": "List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.",
+            "description": "List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_teams.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users": {
+            "main": "./lib/actions/get_users.js",
+            "title": "Get all users.\nThis provides a dump of every user, in the order that they signed up for GitHub.\nNote: Pagination is powered exclusively by the since parameter. Use the Link\nheader to get the URL for the next page of users.\n",
+            "description": "Get all users.\nThis provides a dump of every user, in the order that they signed up for GitHub.\nNote: Pagination is powered exclusively by the since parameter. Use the Link\nheader to get the URL for the next page of users.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username_": {
+            "main": "./lib/actions/get_users__username_.js",
+            "title": "Get a single user.",
+            "description": "Get a single user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__events": {
+            "main": "./lib/actions/get_users__username__events.js",
+            "title": "If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.",
+            "description": "If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__events.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__events_orgs__org_": {
+            "main": "./lib/actions/get_users__username__events_orgs__org_.js",
+            "title": "This is the user's organization dashboard. You must be authenticated as the user to view this.",
+            "description": "This is the user's organization dashboard. You must be authenticated as the user to view this.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__events_orgs__org_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__followers": {
+            "main": "./lib/actions/get_users__username__followers.js",
+            "title": "List a user's followers",
+            "description": "List a user's followers",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__followers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__following__targetUser_": {
+            "main": "./lib/actions/get_users__username__following__targetUser_.js",
+            "title": "Check if one user follows another.",
+            "description": "Check if one user follows another.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__following__targetUser_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__gists": {
+            "main": "./lib/actions/get_users__username__gists.js",
+            "title": "List a users gists.",
+            "description": "List a users gists.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__gists.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__keys": {
+            "main": "./lib/actions/get_users__username__keys.js",
+            "title": "List public keys for a user.\nLists the verified public keys for a user. This is accessible by anyone.\n",
+            "description": "List public keys for a user.\nLists the verified public keys for a user. This is accessible by anyone.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__keys.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__orgs": {
+            "main": "./lib/actions/get_users__username__orgs.js",
+            "title": "List all public organizations for a user.",
+            "description": "List all public organizations for a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__orgs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__received_events": {
+            "main": "./lib/actions/get_users__username__received_events.js",
+            "title": "These are events that you'll only see public events.",
+            "description": "These are events that you'll only see public events.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__received_events.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__received_events_public": {
+            "main": "./lib/actions/get_users__username__received_events_public.js",
+            "title": "List public events that a user has received",
+            "description": "List public events that a user has received",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__received_events_public.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__repos": {
+            "main": "./lib/actions/get_users__username__repos.js",
+            "title": "List public repositories for the specified user.",
+            "description": "List public repositories for the specified user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__repos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__starred": {
+            "main": "./lib/actions/get_users__username__starred.js",
+            "title": "List repositories being starred by a user.",
+            "description": "List repositories being starred by a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__starred.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__username__subscriptions": {
+            "main": "./lib/actions/get_users__username__subscriptions.js",
+            "title": "List repositories being watched by a user.",
+            "description": "List repositories being watched by a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__username__subscriptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

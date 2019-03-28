@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "state": {
+            "type": "string",
+            "enum": [
+                "open",
+                "closed"
+            ],
+            "default": "open"
+        },
+        "head": {
+            "type": "string"
+        },
+        "base": {
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

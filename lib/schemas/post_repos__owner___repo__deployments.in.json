@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "payload": {
+                    "properties": {
+                        "deploy_user": {
+                            "type": "string"
+                        },
+                        "environment": {
+                            "type": "string"
+                        },
+                        "room_id": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "ref": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

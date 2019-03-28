@@ -1,0 +1,34 @@
+{
+    "type": "object",
+    "properties": {
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "bio": {
+                    "type": "string"
+                },
+                "blog": {
+                    "type": "string"
+                },
+                "company": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "hireable": {
+                    "type": "boolean"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

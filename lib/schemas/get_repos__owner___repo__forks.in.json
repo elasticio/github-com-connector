@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "sort": {
+            "type": "string",
+            "enum": [
+                "newes",
+                "oldes",
+                "watchers"
+            ],
+            "default": "newes"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "order": {
+            "type": "string",
+            "enum": [
+                "desc",
+                "asc"
+            ],
+            "default": "desc"
+        },
+        "q": {
+            "required": true,
+            "type": "string"
+        },
+        "sort": {
+            "type": "string",
+            "enum": [
+                "followers",
+                "repositories",
+                "joined"
+            ]
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "properties": {
+        "since": {
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

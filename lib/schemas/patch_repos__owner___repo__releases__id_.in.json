@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "body": {
+                    "type": "string"
+                },
+                "draft": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "prerelease": {
+                    "type": "boolean"
+                },
+                "tag_name": {
+                    "type": "string"
+                },
+                "target_commitish": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

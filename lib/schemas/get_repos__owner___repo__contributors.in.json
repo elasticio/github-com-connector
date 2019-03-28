@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "anon": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

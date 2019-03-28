@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        }
+    }
+}

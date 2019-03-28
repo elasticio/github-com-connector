@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "teamId": {
+            "required": true,
+            "type": "integer"
+        },
+        "username": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

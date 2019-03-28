@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "state": {
+            "type": "string",
+            "enum": [
+                "open",
+                "closed"
+            ],
+            "default": "open"
+        },
+        "direction": {
+            "type": "string"
+        },
+        "sort": {
+            "type": "string",
+            "enum": [
+                "due_date",
+                "completeness"
+            ],
+            "default": "due_date"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

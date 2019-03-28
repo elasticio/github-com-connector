@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "archive_format": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "tarball",
+                "zipball"
+            ]
+        },
+        "path": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

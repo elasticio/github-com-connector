@@ -1,0 +1,63 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "filter": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "assigned",
+                "created",
+                "mentioned",
+                "subscribed",
+                "all"
+            ],
+            "default": "all"
+        },
+        "state": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "open",
+                "closed"
+            ],
+            "default": "open"
+        },
+        "labels": {
+            "required": true,
+            "type": "string"
+        },
+        "sort": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "created",
+                "updated",
+                "comments"
+            ],
+            "default": "created"
+        },
+        "direction": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "default": "desc"
+        },
+        "since": {
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

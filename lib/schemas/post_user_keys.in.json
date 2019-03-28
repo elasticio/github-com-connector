@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "key": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

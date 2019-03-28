@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "teamId": {
+            "required": true,
+            "type": "integer"
+        },
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "permission": {
+                    "enum": [
+                        "pull",
+                        "push",
+                        "admin"
+                    ]
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    }
+}

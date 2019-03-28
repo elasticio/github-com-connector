@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "shaCode": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "body": {
+                    "type": "string"
+                },
+                "line": {
+                    "description": "Deprecated - Use position parameter instead.",
+                    "type": "string"
+                },
+                "number": {
+                    "description": "Line number in the file to comment on. Defaults to null.",
+                    "type": "string"
+                },
+                "path": {
+                    "description": "Relative path of the file to comment on.",
+                    "type": "string"
+                },
+                "position": {
+                    "description": "Line index in the diff to comment on.",
+                    "type": "integer"
+                },
+                "sha": {
+                    "description": "SHA of the commit to comment on.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "sha",
+                "body"
+            ],
+            "type": "object"
+        }
+    }
+}

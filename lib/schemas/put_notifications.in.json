@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "last_read_at": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

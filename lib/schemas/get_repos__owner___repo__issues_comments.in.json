@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "repo": {
+            "required": true,
+            "type": "string"
+        },
+        "direction": {
+            "type": "string"
+        },
+        "sort": {
+            "type": "string",
+            "enum": [
+                "created",
+                "updated"
+            ]
+        },
+        "since": {
+            "type": "string"
+        },
+        "Accept": {
+            "type": "string"
+        }
+    }
+}

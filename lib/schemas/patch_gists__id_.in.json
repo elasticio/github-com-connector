@@ -1,0 +1,55 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer"
+        },
+        "Accept": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "files": {
+                    "properties": {
+                        "delete_this_file_txt": {
+                            "type": "string"
+                        },
+                        "file1_txt": {
+                            "properties": {
+                                "content": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "new_file_txt": {
+                            "properties": {
+                                "content": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "old_name_txt": {
+                            "properties": {
+                                "content": {
+                                    "type": "string"
+                                },
+                                "filename": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
