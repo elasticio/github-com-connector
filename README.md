@@ -4,8 +4,8 @@
 
 A generated MSP connector for the GitHub API (version v3).
 
-Generated from: https://api.apis.guru/v2/specs/github.com/v3/swagger.json<br/>
-Generated at: 2019-04-01T13:53:19+03:00
+Generated from: https://api.apis.guru/v2/specs/github.com/v3/swagger.json  
+Generated at: 2019-04-01T13:54:10+03:00
 
 ## API Description
 
@@ -2124,8 +2124,8 @@ Lists the verified public keys for a user. This is accessible by anyone.
 
 ## License
 
-flowground :- Telekom iPaaS / github-com-connector<br/>
-Copyright © 2019, [Deutsche Telekom AG](https://www.telekom.de)<br/>
+flowground :- Telekom iPaaS / github-com-connector
+Copyright © 2019, [Deutsche Telekom AG](https://www.telekom.de)
 contact: flowground@telekom.de
 
 All files of this connector are licensed under the Apache 2.0 License. For details
