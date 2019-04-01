@@ -1,11 +1,11 @@
-# GitHub MSP Connector [![NPM version] [![Build Status]
+# GitHub MSP Connector
 
 ## Description
 
 A generated MSP connector for the GitHub API (version v3).
 
 Generated from: https://api.apis.guru/v2/specs/github.com/v3/swagger.json
-Generated at: 2019-04-01T13:26:25+03:00
+Generated at: 2019-04-01T13:32:23+03:00
 
 ## API Description
 
@@ -17,7 +17,7 @@ Powerful collaboration, code review, and code management for open source and pri
 Supported authorization schemes:
 - OAuth2
 
-For OAuth 2.0, you need to specify OAuth Client credentials as environment variables in the connector repository:
+For OAuth 2.0 you need to specify OAuth Client credentials as environment variables in the connector repository:
 * `OAUTH_CLIENT_ID` - your OAuth client id
 * `OAUTH_CLIENT_SECRET` - your OAuth client secret
 
