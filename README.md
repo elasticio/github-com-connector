@@ -1,11 +1,12 @@
-# GitHub MSP Connector
+# GitHub MSP Connector ![LOGO](logo.png)
 
 ## Description
 
 A generated MSP connector for the GitHub API (version v3).
 
 Generated from: https://api.apis.guru/v2/specs/github.com/v3/swagger.json
-Generated at: 2019-04-01T13:32:23+03:00
+
+Generated at: 2019-04-01T13:45:11+03:00
 
 ## API Description
 
