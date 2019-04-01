@@ -5684,9 +5684,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/search-repositories-by-keyword"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -10690,9 +10688,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repos"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -10783,9 +10779,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repos"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -11389,9 +11383,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repo"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -11491,9 +11483,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repo"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -19394,9 +19384,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repos"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -19496,9 +19484,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repo"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -31855,9 +31841,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/pulls"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -31957,9 +31941,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/pulls"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -32919,9 +32901,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/pullRequest"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -33030,9 +33010,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repo"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -34022,9 +34000,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/pulls"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -39986,9 +39962,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repos"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -40865,9 +40839,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/search-repositories"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -42578,9 +42550,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repos"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -45523,9 +45493,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repos"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -45607,9 +45575,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repos"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -46171,9 +46137,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repos"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -48255,9 +48219,7 @@
                         },
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/repos"
-                                }
+                                "schema": {}
                             }
                         }
                     },
@@ -52826,9 +52788,7 @@
                 },
                 "type": "object"
             },
-            "forks": {
-                "$ref": "#/components/schemas/repos"
-            },
+            "forks": {},
             "gist": {
                 "properties": {
                     "comments": {
@@ -57131,9 +57091,7 @@
                             "ref": {
                                 "type": "string"
                             },
-                            "repo": {
-                                "$ref": "#/components/schemas/repo"
-                            },
+                            "repo": {},
                             "sha": {
                                 "type": "string"
                             },
@@ -57192,9 +57150,7 @@
                             "ref": {
                                 "type": "string"
                             },
-                            "repo": {
-                                "$ref": "#/components/schemas/repo"
-                            },
+                            "repo": {},
                             "sha": {
                                 "type": "string"
                             },
@@ -57362,9 +57318,7 @@
                                 "ref": {
                                     "type": "string"
                                 },
-                                "repo": {
-                                    "$ref": "#/components/schemas/repo"
-                                },
+                                "repo": {},
                                 "sha": {
                                     "type": "string"
                                 },
@@ -57413,9 +57367,7 @@
                                 "ref": {
                                     "type": "string"
                                 },
-                                "repo": {
-                                    "$ref": "#/components/schemas/repo"
-                                },
+                                "repo": {},
                                 "sha": {
                                     "type": "string"
                                 },
@@ -58940,9 +58892,7 @@
                     },
                     "parent": {
                         "allOf": [
-                            {
-                                "$ref": "#/components/schemas/repo"
-                            },
+                            {},
                             {
                                 "description": "Is present when the repo is a fork. Parent is the repo this repo was forked from."
                             }
@@ -58960,9 +58910,7 @@
                     },
                     "source": {
                         "allOf": [
-                            {
-                                "$ref": "#/components/schemas/repo"
-                            },
+                            {},
                             {
                                 "description": "Is present when the repo is a fork. Source is the ultimate source for the network."
                             }
@@ -59460,9 +59408,7 @@
                 "type": "object"
             },
             "repos": {
-                "items": {
-                    "$ref": "#/components/schemas/repo"
-                },
+                "items": {},
                 "type": "array"
             },
             "search-code": {
@@ -60047,9 +59993,7 @@
             "search-repositories": {
                 "properties": {
                     "items": {
-                        "items": {
-                            "$ref": "#/components/schemas/repo"
-                        },
+                        "items": {},
                         "type": "array"
                     },
                     "total_count": {
@@ -60061,9 +60005,7 @@
             "search-repositories-by-keyword": {
                 "properties": {
                     "repositories": {
-                        "items": {
-                            "$ref": "#/components/schemas/repo"
-                        },
+                        "items": {},
                         "type": "array"
                     }
                 },
@@ -60726,9 +60668,7 @@
                 },
                 "type": "object"
             },
-            "teamRepos": {
-                "$ref": "#/components/schemas/repos"
-            },
+            "teamRepos": {},
             "teams": {
                 "items": {
                     "properties": {
