@@ -5,7 +5,7 @@
 A generated MSP connector for the GitHub API (version v3).
 
 Generated from: https://api.apis.guru/v2/specs/github.com/v3/swagger.json<br/>
-Generated at: 2019-04-03T15:17:51+03:00
+Generated at: 2019-04-03T15:30:25+03:00
 
 ## API Description
 
@@ -34,16 +34,14 @@ For OAuth 2.0 you need to specify OAuth Client credentials as environment variab
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List Feeds.
-GitHub provides several timeline resources in Atom format. The Feeds API
- lists all the feeds available to the authenticating user.
-
+> GitHub provides several timeline resources in Atom format. The Feeds API
+>  lists all the feeds available to the authenticating user.
 
 #### Input Parameters
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List the authenticated user's gists or if called anonymously, this will
-return all public gists.
-
+> return all public gists.
 
 #### Input Parameters
 * `since` - _optional_ - Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
@@ -148,8 +146,7 @@ Only gists updated at or after this time are returned.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Listing available templates.
-List all templates available to pass as an option when creating a repository.
-
+> List all templates available to pass as an option when creating a repository.
 
 #### Input Parameters
 * `Accept` - _optional_ - Is used to set specified media type.
@@ -161,8 +158,7 @@ List all templates available to pass as an option when creating a repository.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List issues.
-List all issues across all the authenticated user's visible repositories.
-
+> List all issues across all the authenticated user's visible repositories.
 
 #### Input Parameters
 * `filter` - _required_ - Issues assigned to you / created by you / mentioning you / you're
@@ -243,8 +239,7 @@ Only issues updated at or after this time are returned.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List your notifications.
-List all notifications for the current user, grouped by repository.
-
+> List all notifications for the current user, grouped by repository.
 
 #### Input Parameters
 * `all` - _optional_ - True to show notifications marked as read.
@@ -257,8 +252,7 @@ Example: "2012-10-09T23:39:01Z".
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Mark as read.
-Marking a notification as "read" removes it from the default view on GitHub.com.
-
+> Marking a notification as "read" removes it from the default view on GitHub.com.
 
 #### Input Parameters
 * `Accept` - _optional_ - Is used to set specified media type.
@@ -288,10 +282,9 @@ Marking a notification as "read" removes it from the default view on GitHub.com.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Set a Thread Subscription.
-This lets you subscribe to a thread, or ignore it. Subscribing to a thread
-is unnecessary if the user is already subscribed to the repository. Ignoring
-a thread will mute all future notifications (until you comment or get @mentioned).
-
+> This lets you subscribe to a thread, or ignore it. Subscribing to a thread
+> is unnecessary if the user is already subscribed to the repository. Ignoring
+> a thread will mute all future notifications (until you comment or get @mentioned).
 
 #### Input Parameters
 * `id` - _required_ - Id of thread.
@@ -316,8 +309,7 @@ a thread will mute all future notifications (until you comment or get @mentioned
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List issues.
-List all issues for a given organization for the authenticated user.
-
+> List all issues for a given organization for the authenticated user.
 
 #### Input Parameters
 * `org` - _required_ - Name of organisation.
@@ -338,21 +330,19 @@ Only issues updated at or after this time are returned.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Members list.
-List all users who are members of an organization. A member is a user tha
-belongs to at least 1 team in the organization. If the authenticated user
-is also an owner of this organization then both concealed and public members
-will be returned. If the requester is not an owner of the organization the
-query will be redirected to the public members list.
-
+> List all users who are members of an organization. A member is a user tha
+> belongs to at least 1 team in the organization. If the authenticated user
+> is also an owner of this organization then both concealed and public members
+> will be returned. If the requester is not an owner of the organization the
+> query will be redirected to the public members list.
 
 #### Input Parameters
 * `org` - _required_ - Name of organisation.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Remove a member.
-Removing a user from this list will remove them from all teams and they
-will no longer have any access to the organization's repositories.
-
+> Removing a user from this list will remove them from all teams and they
+> will no longer have any access to the organization's repositories.
 
 #### Input Parameters
 * `org` - _required_ - Name of organisation.
@@ -367,9 +357,8 @@ will no longer have any access to the organization's repositories.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Public members list.
-Members of an organization can choose to have their membership publicized
-or not.
-
+> Members of an organization can choose to have their membership publicized
+> or not.
 
 #### Input Parameters
 * `org` - _required_ - Name of organisation.
@@ -405,8 +394,7 @@ or not.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Create a new repository for the authenticated user. OAuth users must supply
-repo scope.
-
+> repo scope.
 
 #### Input Parameters
 * `org` - _required_ - Name of organisation.
@@ -419,24 +407,21 @@ repo scope.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Create team.
-In order to create a team, the authenticated user must be an owner of organization.
-
+> In order to create a team, the authenticated user must be an owner of organization.
 
 #### Input Parameters
 * `org` - _required_ - Name of organisation.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Get your current rate limit status
-Note: Accessing this endpoint does not count against your rate limit.
-
+> Note: Accessing this endpoint does not count against your rate limit.
 
 #### Input Parameters
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Delete a Repository.
-Deleting a repository requires admin access. If OAuth is used, the delete_repo
-scope is required.
-
+> Deleting a repository requires admin access. If OAuth is used, the delete_repo
+> scope is required.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -458,9 +443,8 @@ scope is required.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List assignees.
-This call lists all the available assignees (owner + collaborators) to which
-issues may be assigned.
-
+> This call lists all the available assignees (owner + collaborators) to which
+> issues may be assigned.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -468,8 +452,7 @@ issues may be assigned.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Check assignee.
-You may also check to see if a particular user is an assignee for a repository.
-
+> You may also check to see if a particular user is an assignee for a repository.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -493,11 +476,10 @@ You may also check to see if a particular user is an assignee for a repository.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List.
-When authenticating as an organization owner of an organization-owned
-repository, all organization owners are included in the list of
-collaborators. Otherwise, only users with access to the repository are
-returned in the collaborators list.
-
+> When authenticating as an organization owner of an organization-owned
+> repository, all organization owners are included in the list of
+> collaborators. Otherwise, only users with access to the repository are
+> returned in the collaborators list.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -529,8 +511,7 @@ returned in the collaborators list.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List commit comments for a repository.
-Comments are ordered by ascending ID.
-
+> Comments are ordered by ascending ID.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -576,10 +557,9 @@ Example: "2012-10-09T23:39:01Z".
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Get the combined Status for a specific Ref
-The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details.
-To access this endpoint during the preview period, you must provide a custom media type in the Accept header:
-application/vnd.github.she-hulk-preview+json
-
+> The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details.
+> To access this endpoint during the preview period, you must provide a custom media type in the Accept header:
+> application/vnd.github.she-hulk-preview+json
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -621,8 +601,7 @@ application/vnd.github.she-hulk-preview+json
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Delete a file.
-This method deletes a file in a repository.
-
+> This method deletes a file in a repository.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -631,12 +610,11 @@ This method deletes a file in a repository.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Get contents.
-This method returns the contents of a file or directory in a repository.
-Files and symlinks support a custom media type for getting the raw content.
-Directories and submodules do not support custom media types.
-Note: This API supports files up to 1 megabyte in size.
-Here can be many outcomes. For details see "http://developer.github.com/v3/repos/contents/"
-
+> This method returns the contents of a file or directory in a repository.
+> Files and symlinks support a custom media type for getting the raw content.
+> Directories and submodules do not support custom media types.
+> Note: This API supports files up to 1 megabyte in size.
+> Here can be many outcomes. For details see "http://developer.github.com/v3/repos/contents/"
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -685,8 +663,7 @@ Here can be many outcomes. For details see "http://developer.github.com/v3/repos
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Create a Deployment Status
-Users with push access can create deployment statuses for a given deployment:
-
+> Users with push access can create deployment statuses for a given deployment:
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -734,10 +711,9 @@ Users with push access can create deployment statuses for a given deployment:
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Create a fork.
-Forking a Repository happens asynchronously. Therefore, you may have to wai
-a short period before accessing the git objects. If this takes longer than 5
-minutes, be sure to contact Support.
-
+> Forking a Repository happens asynchronously. Therefore, you may have to wai
+> a short period before accessing the git objects. If this takes longer than 5
+> minutes, be sure to contact Support.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -752,11 +728,10 @@ minutes, be sure to contact Support.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Get a Blob.
-Since blobs can be any arbitrary binary data, the input and responses for
-the blob API takes an encoding parameter that can be either utf-8 or
-base64. If your data cannot be losslessly sent as a UTF-8 string, you can
-base64 encode it.
-
+> Since blobs can be any arbitrary binary data, the input and responses for
+> the blob API takes an encoding parameter that can be either utf-8 or
+> base64. If your data cannot be losslessly sent as a UTF-8 string, you can
+> base64 encode it.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -794,9 +769,8 @@ base64 encode it.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Delete a Reference
-Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a 
-Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0
-
+> Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a 
+> Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -821,12 +795,11 @@ Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Create a Tag Object.
-Note that creating a tag object does not create the reference that makes a
-tag in Git. If you want to create an annotated tag in Git, you have to do
-this call to create the tag object, and then create the refs/tags/[tag]
-reference. If you want to create a lightweight tag, you only have to create
-the tag reference - this call would be unnecessary.
-
+> Note that creating a tag object does not create the reference that makes a
+> tag in Git. If you want to create an annotated tag in Git, you have to do
+> this call to create the tag object, and then create the refs/tags/[tag]
+> reference. If you want to create a lightweight tag, you only have to create
+> the tag reference - this call would be unnecessary.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -842,10 +815,9 @@ the tag reference - this call would be unnecessary.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Create a Tree.
-The tree creation API will take nested entries as well. If both a tree and
-a nested path modifying that tree are specified, it will overwrite the
-contents of that tree with the new path contents and write a new tree out.
-
+> The tree creation API will take nested entries as well. If both a tree and
+> a nested path modifying that tree are specified, it will overwrite the
+> contents of that tree with the new path contents and write a new tree out.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -900,12 +872,11 @@ contents of that tree with the new path contents and write a new tree out.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Test a push hook.
-This will trigger the hook with the latest push to the current repository
-if the hook is subscribed to push events. If the hook is not subscribed
-to push events, the server will respond with 204 but no test POST will
-be generated.
-Note: Previously /repos/:owner/:repo/hooks/:id/tes
-
+> This will trigger the hook with the latest push to the current repository
+> if the hook is subscribed to push events. If the hook is not subscribed
+> to push events, the server will respond with 204 but no test POST will
+> be generated.
+> Note: Previously /repos/:owner/:repo/hooks/:id/tes
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -935,8 +906,7 @@ Only issues updated at or after this time are returned.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Create an issue.
-Any user with pull access to a repository can create an issue.
-
+> Any user with pull access to a repository can create an issue.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1004,8 +974,7 @@ Example: "2012-10-09T23:39:01Z".
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Edit an issue.
-Issue owners and users with push access can edit an issue.
-
+> Issue owners and users with push access can edit an issue.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1062,8 +1031,7 @@ Issue owners and users with push access can edit an issue.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Replace all labels for an issue.
-Sending an empty array ([]) will remove all Labels from the Issue.
-
+> Sending an empty array ([]) will remove all Labels from the Issue.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1149,9 +1117,8 @@ Sending an empty array ([]) will remove all Labels from the Issue.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List languages.
-List languages for the specified repository. The value on the right of a
-language is the number of bytes of code written in that language.
-
+> List languages for the specified repository. The value on the right of a
+> language is the number of bytes of code written in that language.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1217,8 +1184,7 @@ language is the number of bytes of code written in that language.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List your notifications in a repository
-List all notifications for the current user.
-
+> List all notifications for the current user.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1233,9 +1199,8 @@ Example: "2012-10-09T23:39:01Z".
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Mark notifications as read in a repository.
-Marking all notifications in a repository as "read" removes them from the
-default view on GitHub.com.
-
+> Marking all notifications in a repository as "read" removes them from the
+> default view on GitHub.com.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1263,8 +1228,7 @@ Example: github:new-script-format.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List comments in a repository.
-By default, Review Comments are ordered by ascending ID.
-
+> By default, Review Comments are ordered by ascending ID.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1326,17 +1290,16 @@ Example: "2012-10-09T23:39:01Z".
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Create a comment.
-  #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )
-  description: |
-    Alternative Input.
-    Instead of passing commit_id, path, and position you can reply to an
-    existing Pull Request Comment like this:
-
-        body
-           Required string
-        in_reply_to
-           Required number - Comment id to reply to.
-
+>   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )
+>   description: |
+>     Alternative Input.
+>     Instead of passing commit_id, path, and position you can reply to an
+>     existing Pull Request Comment like this:
+> 
+>         body
+>            Required string
+>         in_reply_to
+>            Required number - Comment id to reply to.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1377,8 +1340,7 @@ Example: "2012-10-09T23:39:01Z".
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Get the README.
-This method returns the preferred README for a repository.
-
+> This method returns the preferred README for a repository.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1394,8 +1356,7 @@ This method returns the preferred README for a repository.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Create a release
-Users with push access to the repository can create a release.
-
+> Users with push access to the repository can create a release.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1419,8 +1380,7 @@ Users with push access to the repository can create a release.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Edit a release asset
-Users with push access to the repository can edit a release asset.
-
+> Users with push access to the repository can edit a release asset.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1468,9 +1428,8 @@ Users with push access to the repository can edit a release asset.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Get the number of additions and deletions per week.
-Returns a weekly aggregate of the number of additions and deletions pushed
-to a repository.
-
+> Returns a weekly aggregate of the number of additions and deletions pushed
+> to a repository.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1478,9 +1437,8 @@ to a repository.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Get the last year of commit activity data.
-Returns the last year of commit activity grouped by week. The days array
-is a group of commits per day, starting on Sunday.
-
+> Returns the last year of commit activity grouped by week. The days array
+> is a group of commits per day, starting on Sunday.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1502,15 +1460,14 @@ is a group of commits per day, starting on Sunday.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Get the number of commits per hour in each day.
-Each array contains the day number, hour number, and number of commits
-0-6 Sunday - Saturday
-0-23 Hour of day
-Number of commits
-
-For example, [2, 14, 25] indicates that there were 25 total commits, during
-the 2.00pm hour on Tuesdays. All times are based on the time zone of
-individual commits.
-
+> Each array contains the day number, hour number, and number of commits
+> 0-6 Sunday - Saturday
+> 0-23 Hour of day
+> Number of commits
+> 
+> For example, [2, 14, 25] indicates that there were 25 total commits, during
+> the 2.00pm hour on Tuesdays. All times are based on the time zone of
+> individual commits.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1585,12 +1542,11 @@ individual commits.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Get archive link.
-This method will return a 302 to a URL to download a tarball or zipball
-archive for a repository. Please make sure your HTTP framework is
-configured to follow redirects or you will need to use the Location header
-to make a second GET request.
-Note: For private repositories, these links are temporary and expire quickly.
-
+> This method will return a 302 to a URL to download a tarball or zipball
+> archive for a repository. Please make sure your HTTP framework is
+> configured to follow redirects or you will need to use the Location header
+> to make a second GET request.
+> Note: For private repositories, these links are temporary and expire quickly.
 
 #### Input Parameters
 * `owner` - _required_ - Name of repository owner.
@@ -1601,11 +1557,10 @@ Note: For private repositories, these links are temporary and expire quickly.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List all public repositories.
-This provides a dump of every public repository, in the order that they
-were created.
-Note: Pagination is powered exclusively by the since parameter. is the
-Link header to get the URL for the next page of repositories.
-
+> This provides a dump of every public repository, in the order that they
+> were created.
+> Note: Pagination is powered exclusively by the since parameter. is the
+> Link header to get the URL for the next page of repositories.
 
 #### Input Parameters
 * `since` - _optional_ - The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.
@@ -1695,9 +1650,8 @@ language.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Delete team.
-In order to delete a team, the authenticated user must be an owner of the
-org that the team is associated with.
-
+> In order to delete a team, the authenticated user must be an owner of the
+> org that the team is associated with.
 
 #### Input Parameters
 * `teamId` - _required_ - Id of team.
@@ -1710,31 +1664,28 @@ org that the team is associated with.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Edit team.
-In order to edit a team, the authenticated user must be an owner of the org
-that the team is associated with.
-
+> In order to edit a team, the authenticated user must be an owner of the org
+> that the team is associated with.
 
 #### Input Parameters
 * `teamId` - _required_ - Id of team.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List team members.
-In order to list members in a team, the authenticated user must be a member
-of the team.
-
+> In order to list members in a team, the authenticated user must be a member
+> of the team.
 
 #### Input Parameters
 * `teamId` - _required_ - Id of team.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### The "Remove team member" API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.
-
-Remove team member.
-In order to remove a user from a team, the authenticated user must have 'admin'
-permissions to the team or be an owner of the org that the team is associated
-with.
-NOTE This does not delete the user, it just remove them from the team.
-
+> 
+> Remove team member.
+> In order to remove a user from a team, the authenticated user must have 'admin'
+> permissions to the team or be an owner of the org that the team is associated
+> with.
+> NOTE This does not delete the user, it just remove them from the team.
 
 #### Input Parameters
 * `teamId` - _required_ - Id of team.
@@ -1742,11 +1693,10 @@ NOTE This does not delete the user, it just remove them from the team.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### The "Get team member" API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.
-
-Get team member.
-In order to get if a user is a member of a team, the authenticated user mus
-be a member of the team.
-
+> 
+> Get team member.
+> In order to get if a user is a member of a team, the authenticated user mus
+> be a member of the team.
 
 #### Input Parameters
 * `teamId` - _required_ - Id of team.
@@ -1754,12 +1704,11 @@ be a member of the team.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.
-
-Add team member.
-In order to add a user to a team, the authenticated user must have 'admin'
-permissions to the team or be an owner of the org that the team is associated
-with.
-
+> 
+> Add team member.
+> In order to add a user to a team, the authenticated user must have 'admin'
+> permissions to the team or be an owner of the org that the team is associated
+> with.
 
 #### Input Parameters
 * `teamId` - _required_ - Id of team.
@@ -1767,8 +1716,7 @@ with.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Remove team membership.
-In order to remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.
-
+> In order to remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.
 
 #### Input Parameters
 * `teamId` - _required_ - Id of team.
@@ -1776,8 +1724,7 @@ In order to remove a membership between a user and a team, the authenticated use
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Get team membership.
-In order to get a user's membership with a team, the authenticated user must be a member of the team or an owner of the team's organization.
-
+> In order to get a user's membership with a team, the authenticated user must be a member of the team or an owner of the team's organization.
 
 #### Input Parameters
 * `teamId` - _required_ - Id of team.
@@ -1785,12 +1732,11 @@ In order to get a user's membership with a team, the authenticated user must be 
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Add team membership.
-In order to add a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with.
-
-If the user is already a part of the team's organization (meaning they're on at least one other team in the organization), this endpoint will add the user to the team.
-
-If the user is completely unaffiliated with the team's organization (meaning they're on none of the organization's teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the 'pending' state until the user accepts the invitation, at which point the membership will transition to the 'active' state and the user will be added as a member of the team.
-
+> In order to add a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with.
+> 
+> If the user is already a part of the team's organization (meaning they're on at least one other team in the organization), this endpoint will add the user to the team.
+> 
+> If the user is completely unaffiliated with the team's organization (meaning they're on none of the organization's teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the 'pending' state until the user accepts the invitation, at which point the membership will transition to the 'active' state and the user will be added as a member of the team.
 
 #### Input Parameters
 * `teamId` - _required_ - Id of team.
@@ -1838,26 +1784,23 @@ If the user is completely unaffiliated with the team's organization (meaning the
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Delete email address(es).
-You can include a single email address or an array of addresses.
-
+> You can include a single email address or an array of addresses.
 
 #### Input Parameters
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List email addresses for a user.
-In the final version of the API, this method will return an array of hashes
-with extended information for each email address indicating if the address
-has been verified and if it's primary email address for GitHub.
-Until API v3 is finalized, use the application/vnd.github.v3 media type to
-get other response format.
-
+> In the final version of the API, this method will return an array of hashes
+> with extended information for each email address indicating if the address
+> has been verified and if it's primary email address for GitHub.
+> Until API v3 is finalized, use the application/vnd.github.v3 media type to
+> get other response format.
 
 #### Input Parameters
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Add email address(es).
-You can post a single email address or an array of addresses.
-
+> You can post a single email address or an array of addresses.
 
 #### Input Parameters
 * `Accept` - _optional_ - Is used to set specified media type.
@@ -1873,9 +1816,8 @@ You can post a single email address or an array of addresses.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Unfollow a user.
-Unfollowing a user requires the user to be logged in and authenticated with
-basic auth or OAuth with the user:follow scope.
-
+> Unfollowing a user requires the user to be logged in and authenticated with
+> basic auth or OAuth with the user:follow scope.
 
 #### Input Parameters
 * `username` - _required_ - Name of user.
@@ -1888,18 +1830,16 @@ basic auth or OAuth with the user:follow scope.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Follow a user.
-Following a user requires the user to be logged in and authenticated with
-basic auth or OAuth with the user:follow scope.
-
+> Following a user requires the user to be logged in and authenticated with
+> basic auth or OAuth with the user:follow scope.
 
 #### Input Parameters
 * `username` - _required_ - Name of user.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List issues.
-List all issues across owned and member repositories for the authenticated
-user.
-
+> List all issues across owned and member repositories for the authenticated
+> user.
 
 #### Input Parameters
 * `filter` - _required_ - Issues assigned to you / created by you / mentioning you / you're
@@ -1919,9 +1859,8 @@ Only issues updated at or after this time are returned.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List your public keys.
-Lists the current user's keys. Management of public keys via the API requires
-that you are authenticated through basic auth, or OAuth with the 'user', 'write:public_key' scopes.
-
+> Lists the current user's keys. Management of public keys via the API requires
+> that you are authenticated through basic auth, or OAuth with the 'user', 'write:public_key' scopes.
 
 #### Input Parameters
 * `Accept` - _optional_ - Is used to set specified media type.
@@ -1949,9 +1888,8 @@ that you are authenticated through basic auth, or OAuth with the 'user', 'write:
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List repositories for the authenticated user. Note that this does not include
-repositories owned by organizations which the user can access. You can lis
-user organizations and list organization repositories separately.
-
+> repositories owned by organizations which the user can access. You can lis
+> user organizations and list organization repositories separately.
 
 #### Input Parameters
 * `type` - _optional_
@@ -1959,8 +1897,7 @@ user organizations and list organization repositories separately.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Create a new repository for the authenticated user. OAuth users must supply
-repo scope.
-
+> repo scope.
 
 #### Input Parameters
 * `Accept` - _optional_ - Is used to set specified media type.
@@ -2026,10 +1963,9 @@ repo scope.
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### Get all users.
-This provides a dump of every user, in the order that they signed up for GitHub.
-Note: Pagination is powered exclusively by the since parameter. Use the Link
-header to get the URL for the next page of users.
-
+> This provides a dump of every user, in the order that they signed up for GitHub.
+> Note: Pagination is powered exclusively by the since parameter. Use the Link
+> header to get the URL for the next page of users.
 
 #### Input Parameters
 * `since` - _optional_ - The integer ID of the last user that you've seen.
@@ -2077,8 +2013,7 @@ Example: "2012-10-09T23:39:01Z".
 * `Accept` - _optional_ - Is used to set specified media type.
 
 ### List public keys for a user.
-Lists the verified public keys for a user. This is accessible by anyone.
-
+> Lists the verified public keys for a user. This is accessible by anyone.
 
 #### Input Parameters
 * `username` - _required_ - Name of user.
