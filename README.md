@@ -1,11 +1,11 @@
-# ![LOGO](logo.png) GitHub MSP Connector
+# ![LOGO](logo.png) GitHub **flow**ground Connector
 
 ## Description
 
-A generated MSP connector for the GitHub API (version v3).
+A generated **flow**ground connector for the GitHub API (version v3).
 
 Generated from: https://api.apis.guru/v2/specs/github.com/v3/swagger.json<br/>
-Generated at: 2019-04-04T18:00:56+03:00
+Generated at: 2019-05-07T17:40:59+03:00
 
 ## API Description
 
@@ -2059,7 +2059,7 @@ Example: "2012-10-09T23:39:01Z".
 
 ## License
 
-flowground :- Telekom iPaaS / github-com-connector<br/>
+**flow**ground :- Telekom iPaaS / github-com-connector<br/>
 Copyright © 2019, [Deutsche Telekom AG](https://www.telekom.de)<br/>
 contact: flowground@telekom.de
 
