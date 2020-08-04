@@ -3,6 +3,7 @@
     "description": "Powerful collaboration, code review, and code management for open source and private projects.\n",
     "docsUrl": "https://developer.github.com/v3/",
     "url": "https://api.apis.guru/v2/specs/github.com/v3/swagger.json",
+    "buildType":"docker",
     "envVars": {
         "OAUTH_CLIENT_ID": {
             "description": "OAuth Client ID"
